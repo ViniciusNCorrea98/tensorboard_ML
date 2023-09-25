@@ -9,8 +9,8 @@ from keras.callbacks import TensorBoard
 import time
 import pickle
 
-gpu_opts= tf.GPUOptions(per_process_gpu_memory_fraction=0.333)
-session = tf.Session(config=tf.ConfigProto(gpu_options=gpu_opts))
+gpu_opts= tf.compat.v1.GPUOptions(per_process_gpu_memory_fraction=0.333)
+session = tf.compat.v1.Session(config=tf.compat.v1.ConfigProto(gpu_options=gpu_opts))
 
 pickle_in = open("X.pickle", "rb")
 X= pickle.load(pickle_in)
